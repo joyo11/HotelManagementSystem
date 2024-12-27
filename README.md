@@ -1,4 +1,4 @@
-Hotel Management System
+**Hotel Management System**
 A simple hotel management system built in C++ to manage the booking and checkout process for hotel rooms. This system allows users to view available rooms, book rooms, and checkout rooms.
 
 Features

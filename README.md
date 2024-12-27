@@ -103,5 +103,4 @@ checkoutRoom(int roomNumber): Checks out a room by its number.
 Main Function
 The main function handles user interaction through a menu system, accepting inputs and calling appropriate methods from the Hotel class.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+For any questions or inquires contact shafay11august@gmail.com

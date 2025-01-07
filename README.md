@@ -1,74 +1,96 @@
-Hotel Management System
-A simple hotel management system built in C++ to manage the booking and checkout process for hotel rooms. This system allows users to view available rooms, book rooms, and checkout rooms.
+# Hotel Management System
 
-Features
-View available rooms.
-Book a room (mark as occupied).
-Checkout a room (mark as available).
-Simple console-based interface.
-Requirements
-C++11 (or later) compatible compiler such as g++.
-Basic understanding of C++ programming concepts such as classes, vectors, and loops.
-Setup
-Clone the repository (or download the source code).
+A simple Hotel Management System built in C++ to manage the booking and checkout process for hotel rooms. This system also demonstrates basic stack operations for managing room numbers during booking and checkout. It includes features for viewing available rooms, booking rooms, and checking out rooms, all through a simple console-based interface.
 
-You can clone the repository using the following command (if hosted on GitHub):
+---
 
-bash
-Copy code
-git clone https://github.com/yourusername/hotel-management-system.git
-Compile the Code.
+## Features
+- **View Available Rooms**: Display all unoccupied rooms.
+- **Book a Room**: Mark a specific room as occupied.
+- **Checkout a Room**: Mark a specific room as available.
+- **Room Stack Operations**: Use a stack to manage and log room numbers for the most recent booking or checkout.
+- **Simple Console Interface**: User-friendly interaction through text-based menus.
 
-Use the following command to compile the C++ code:
+---
 
-bash
-Copy code
+## Requirements
+- **C++ Compiler**: C++11 (or later) compatible compiler such as `g++`.
+- **Basic C++ Knowledge**: Understanding of concepts like classes, vectors, loops, and stacks.
+
+---
+
+## Setup
+
+### Clone the Repository
+Clone the repository to your local machine (if hosted on GitHub):
+```bash
+git clone https://github.com/joyo11/HotelManagementSystem
+```
+
+### Compile the Code
+Compile the C++ source code using the following command:
+```bash
 g++ hotel_management_system.cpp -o hotel_management_system
-Run the Program.
+```
 
-After compilation, run the program using the following command:
-
-bash
-Copy code
+### Run the Program
+After successful compilation, run the program with:
+```bash
 ./hotel_management_system
-How to Use
-When the program starts, you will see the main menu with the following options:
+```
 
-markdown
-Copy code
+---
+
+## How to Use
+
+When the program starts, the main menu is displayed:
+
+```plaintext
 --- Hotel Management System ---
 1. Show available rooms
 2. Book a room
 3. Checkout a room
-4. Exit
-1. Show available rooms
-Choose option 1 to display all rooms that are not currently booked.
-2. Book a room
-Choose option 2 and enter the room number you wish to book.
-The system will check if the room is available, and if it is, it will mark it as booked.
-3. Checkout a room
-Choose option 3 and enter the room number you wish to checkout.
-If the room is currently occupied, the system will mark it as available.
-4. Exit
-Choose option 4 to exit the system.
-Example Interaction
-plaintext
-Copy code
+4. Show recent room actions (Stack)
+5. Exit
+```
+
+### Options:
+
+1. **Show Available Rooms**
+   - Choose this option to list all rooms that are currently unoccupied.
+
+2. **Book a Room**
+   - Enter the room number to book.
+   - The system checks availability and marks the room as occupied if it is free.
+   - The room number is pushed onto a stack to log the action.
+
+3. **Checkout a Room**
+   - Enter the room number to check out.
+   - If the room is occupied, it is marked as available.
+   - The room number is pushed onto the stack to log the action.
+
+4. **Show Recent Room Actions (Stack)**
+   - Display the room numbers for the most recent bookings and checkouts in reverse order of occurrence.
+
+5. **Exit**
+   - Exit the program.
+
+---
+
+## Example Interaction
+
+```plaintext
 --- Hotel Management System ---
 1. Show available rooms
 2. Book a room
 3. Checkout a room
-4. Exit
+4. Show recent room actions (Stack)
+5. Exit
 Enter your choice: 1
 
 Available Rooms:
-Room Number: 1
-Price: $100
-Available
-
-Room Number: 2
-Price: $100
-Available
+Room Number: 1, Price: $100
+Room Number: 2, Price: $150
 
 Enter your choice: 2
 Enter room number to book: 1
@@ -77,30 +99,61 @@ Room 1 has been booked.
 Enter your choice: 1
 
 Available Rooms:
-Room Number: 2
-Price: $100
-Available
+Room Number: 2, Price: $150
 
 Enter your choice: 3
 Enter room number to checkout: 1
 Room 1 has been checked out.
 
 Enter your choice: 4
+Recent Room Actions (Stack):
+- Room 1 checked out
+- Room 1 booked
+
+Enter your choice: 5
 Exiting the system. Goodbye!
-Code Structure
-Room Class
-The Room class represents a hotel room with the following attributes:
+```
 
-roomNumber: The number of the room.
-isOccupied: A flag indicating whether the room is booked or not.
-price: The price of the room.
-Hotel Class
-The Hotel class manages a collection of rooms and provides the following methods:
+---
 
-showRooms(): Displays all available rooms.
-bookRoom(int roomNumber): Books a room by its number.
-checkoutRoom(int roomNumber): Checks out a room by its number.
-Main Function
-The main function handles user interaction through a menu system, accepting inputs and calling appropriate methods from the Hotel class.
+## Code Structure
 
-For any questions or inquires contact shafay11august@gmail.com
+### Room Class
+Represents a hotel room with:
+- **Attributes**:
+  - `roomNumber`: The room number.
+  - `isOccupied`: Indicates if the room is booked.
+  - `price`: The price of the room.
+- **Methods**:
+  - Constructor to initialize room details.
+  - Getters and setters for room attributes.
+
+### Hotel Class
+Manages a collection of rooms and stack operations with:
+- **Attributes**:
+  - `rooms`: A vector storing all room objects.
+  - `actionStack`: A stack to log room actions.
+- **Methods**:
+  - `showRooms()`: Displays all unoccupied rooms.
+  - `bookRoom(int roomNumber)`: Books a specific room and logs the action.
+  - `checkoutRoom(int roomNumber)`: Checks out a specific room and logs the action.
+  - `showRecentActions()`: Displays actions from the stack.
+
+### Main Function
+Handles the menu system:
+- Displays options to the user.
+- Accepts inputs and calls appropriate `Hotel` methods.
+
+---
+
+## Contact
+For any questions or inquiries, feel free to reach out:
+- **Email**: [shafay11august@gmail.com](mailto:shafay11august@gmail.com)
+
+---
+
+### Note
+This program is designed for educational purposes and demonstrates basic C++ programming concepts. Future enhancements could include:
+- Persistent storage for room details.
+- Graphical user interface.
+- Online booking integration.

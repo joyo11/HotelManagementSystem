@@ -2,9 +2,7 @@
 #include <string>
 #include <vector>
 
-
 using namespace std;
-
 // Class for a Room
 class Room {
 public:
@@ -20,6 +18,7 @@ public:
         cout << (isOccupied ? "Occupied" : "Available") << endl;
     }
 };
+
 
 // Class for Hotel Management
 class Hotel {
@@ -66,7 +65,7 @@ public:
 };
 
 int main() {
-    Hotel myHotel(5); // Hotel with 5 rooms
+    Hotel myHotel(5); //Hotel with 5 rooms
 
     int choice, roomNumber;
 
